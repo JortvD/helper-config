@@ -1,6 +1,6 @@
 {
 	"name": "@ijo-sm/helper-config",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "The config helper for IJO",
 	"main": "index.js",
 	"repository": {
