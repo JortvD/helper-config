@@ -1,5 +1,5 @@
 const Assert = require("assert");
-const NodeUtils = require("utils");
+const NodeUtils = require("util");
 const FileSystem = require("fs");
 
 function createDefaultConfig(defaultPath, destPath) {
