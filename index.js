@@ -26,7 +26,7 @@ module.exports = class ConfigFile {
 			await createDefaultConfig(this.defaultPath, this.destPath);
 		}
 
-		this.configData = parseConfigBuffer(await odeUtils.promisify(FileSystem.readFile)(this.destPath));
+		this.configData = parseConfigBuffer(await NodeUtils.promisify(FileSystem.readFile)(this.destPath));
 
 		Assert(this.configData, `The config at ${this.destPath} could not be parsed`);
 
@@ -34,7 +34,7 @@ module.exports = class ConfigFile {
 	}
 
 	save() {
-		return odeUtils.promisify(FileSystem.writeFile)(this.destPath, JSON.stringify(this.configData, undefined, "\t"));
+		return NodeUtils.promisify(FileSystem.writeFile)(this.destPath, JSON.stringify(this.configData, undefined, "\t"));
 	}
 
 	get(key, parent = this.configData) {
